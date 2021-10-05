@@ -1,0 +1,35 @@
+$primary:#6f42c1;
+.navbar{
+    background-color: $primary !important
+}
+.heading{
+    color:$primary;
+    position: absolute;
+    bottom: 357px;
+    left: 564px;
+}
+.error{
+    color: red;
+    
+}
+.errors{
+    color:red;
+}
+
+form{
+    margin-left: 20rem;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.144);
+    background-color: rgba(2, 32, 129, 0.842);
+
+}
+.form--hidden{
+    display: none
+}
+#add{
+    width: 50px;
+    width: 84px;
+    position: relative;
+    left: 36rem;
+    top: 7rem;
+}
+@import "node_modules/bootstrap/scss/bootstrap";

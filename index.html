@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <title>Document</title>
+</head>
+
+<body class="container">
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">
+          <i class="fa fa-tumblr-square text-warning"></i>
+          TELKART
+        </a>
+        <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn bg-warning" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="comtainer " id='home'>
+    <div class="d-flex justify-content-center align-items-center">
+      <img class='w-75' src="./assests/background.jpg" alt="" srcset="">
+    </div>
+    <h1 class="heading"> welcome to <span class="text-warning"> telkart</span></h1>
+    <div class='blockt w-25 position-absolute top-50 start-1 translate-middle-y  '></div>
+    <div class="container my-2 d-flex flex-column justify-content-center align-items-center">
+      <span class="fs-4">if u r new user <a href='' id='linkReg'> <button type="submit" class='btn bg-warning'>register</button></a></span>
+      <span  class="fs-4">if u r new alredy registered <a href='' id='linksingin'> <button type="submit" class='btn bg-warning'>signin</button></a></span>
+    </div>
+  </div>
+  <div class="container form--hidden my-5" id='reg'>
+    <form class="d-flex text-light flex-column justify-content-center align-items-center w-50" action="form"
+      id='userreg'>
+      <h1>register</h1>
+      <div class="frominputgroup">
+        <p>fullname</p>
+        <input type="text" class="form-control" id='fname' placeholder="Username" aria-label="Username"
+          aria-describedby="basic-addon1">
+          <div class="error" id='f-error'></div>
+      </div>
+      <div class="frominputgroup">
+        <p>phonenumber</p>
+        <input type="tel" id='p-num'class="form-control" placeholder="phonenumber" aria-label="Username"
+          aria-describedby="basic-addon1">
+          <div class="error" id='t-error'></div>
+      </div>
+      <div class="forminputgroup">
+        <p>email</p>
+        <input type="email"id='email' class="form-control" placeholder="email" aria-label="Username"
+          aria-describedby="basic-addon1">
+          <div class="error" id='e-error'></div>
+      </div>
+      <a href="" id="linksing"> <button class="btn bg-warning my-2" type="submit">register</button></a>
+
+    </form>
+  </div>
+  <div class="container form--hidden my-5 " id='login'>
+    <form class="d-flex text-light flex-column justify-content-center align-items-center w-50" action="form"
+      id='usesin'>
+      <h1>sign in</h1>
+      <div class="frominputgroup">
+        <p>email</p>
+        <input type="email" id='e-mail' class="form-control" placeholder="email" aria-label="Username"
+          aria-describedby="basic-addon1">
+          <div class="errors" id='emailerror'></div>
+      </div>
+      <div class="forminputgroup">
+        <p>new password</p>
+        <input type="password" id='p-word'class="form-control" placeholder="newpassword" aria-label="Username"
+          aria-describedby="basic-addon1">
+          <div class="errors" id='p-error'></div>
+      </div>
+      <a href="" id="linktocart"><button class="btn bg-warning my-2" type="submit">sign in</button></a>
+
+    </form>
+  </div>
+   <div  class='form--hidden  '  id="add">
+  <a href=""id="linktoaddbtn"><button class="btn bg-warning  my-2" type="submit">add cart</button></a>
+   </div>
+  <div class="cartsection  " id='cart'>
+    <div class="container cart   d-flex flex-wrap justify-content-center align-items-center  ">
+     
+      <div class="row ">
+        
+
+      </div>
+     
+    </div>
+  </div>
+  <div class="container form--hidden my-5" id='card'>
+    <form class="d-flex text-light flex-column justify-content-center align-items-center w-50" action="form" id='cartadd'>
+      <h1>add new items</h1>
+      <div class="frominputgroup">
+        <p>item name</p>
+        <input type="text" class="form-control" id='title' placeholder="itemname" aria-label="Username"
+          aria-describedby="basic-addon1">
+      </div>
+      
+      <div class="forminputgroup">
+        <p>price</p>
+        <input type="number" id='price'class="form-control" placeholder="price" aria-label="Username"
+          aria-describedby="basic-addon1">
+      </div>
+      <a href="" id="linksin"> <button class="btn bg-warning my-2" id='additem'type="submit">additem</button></a>
+
+    </form>
+  </div>
+  <div class="container form--hidden my-5" id='edit'>
+    <form class="d-flex text-light flex-column justify-content-center align-items-center w-50" action="form" id='editadd'>
+      <h1>edit the card</h1>
+      <div class="frominputgroup">
+        <p>user id</p>
+        <input type="text" class="form-control" id='id' placeholder="itemname" aria-label="Username"
+          aria-describedby="basic-addon1">
+      </div>
+      <!-- <div class="frominputgroup">
+        <p>image</p>
+        <input type="file" class="form-control" aria-label="Username"
+          aria-describedby="basic-addon1">
+      </div> -->
+      <div class="forminputgroup">
+        <p>email</p>
+        <input type="email" id='emailid'class="form-control" placeholder="email" aria-label="Username"
+          aria-describedby="basic-addon1">
+      </div>
+      <a href="" id="linktoedit"> <button class="btn bg-warning my-2" id='additem'type="submit">update</button></a>
+
+    </form>
+  </div>
+
+  <script src="index.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
