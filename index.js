@@ -20,9 +20,9 @@
 
 // ];
 
-var up= document.querySelector('.edits')
+var up = document.querySelector('.edits')
 
-
+window.addEventListener('click', upDate)
 
 
 
@@ -38,22 +38,22 @@ document.getElementById('additem').addEventListener('click', (e) => {
     // menu.push(menus)
 
     document.forms[3].reset();
-    axios.get('https://reqres.in/api/users').then(res =>{
-        let menus=JSON.stringify(res.data.data)
-       
+    axios.get('https://reqres.in/api/users').then(res => {
+        let menus = JSON.stringify(res.data.data)
+
         showOutput(menus)
-     }    
-     ).catch(err=>console.error(err));
+    }
+    ).catch(err => console.error(err));
 
     // let displaymenu = menu.map((items) => {
     //     return ` 
     //    <div class="col-md-3 ">
     //        <div class="card my-3 mx-3 p-3 bg-primary">
-            
+
     //            <div class="card-body text-center">
     //                <p class="btn text-light bg-warning">[ADD TO CART]</p>
     //                <h4 class="card-title">
-                   
+
     //                    ${items.id}
     //                </h4>
     //                <h1 class="card-text">
@@ -117,7 +117,7 @@ document.querySelector('#linktocart').addEventListener('click', (e) => {
 
     const login = document.querySelector("#login");
     const cartbtn = document.querySelector('#add');
-    const carts=document.querySelector('#cart')
+    const carts = document.querySelector('#cart')
     let email = document.querySelector('#e-mail').value;
     let password = document.querySelector('#p-word').value;
     e.preventDefault()
@@ -128,7 +128,7 @@ document.querySelector('#linktocart').addEventListener('click', (e) => {
             error[i].innerHTML = 'enter the feild'
         }
         else if (email !== dataobj[i].email) {
-        error[i].innerHTML = 'plz enter the valid mail';
+            error[i].innerHTML = 'plz enter the valid mail';
         }
         if (email == dataobj[i].email) {
             login.classList.add("form--hidden")
@@ -144,8 +144,8 @@ document.querySelector('#linktoaddbtn').addEventListener('click', (e) => {
     const cartbtn = document.querySelector('#add')
     const card = document.querySelector('#card')
     e.preventDefault()
-   
-   
+
+
     card.classList.remove("form--hidden")
     cartbtn.classList.add('form--hidden')
 
@@ -166,19 +166,19 @@ document.querySelector('#linktoaddbtn').addEventListener('click', (e) => {
 
 
 function showOutput(menus) {
-    debugger;
-    var required=menus
-    var data=JSON.parse(required)
-   
-//     display=`<pre>${JSON.stringify(required, null, 2)}
-//    </pre>
-//  `
-//  <img src="${required.data[0].avatar}" alt="" srcset="">
-let displaymenu=''  
-for(let i=0;i<data.length;i++){
-    
-     displaymenu += 
-    ` 
+
+    var required = menus
+    var data = JSON.parse(required)
+
+    //     display=`<pre>${JSON.stringify(required, null, 2)}
+    //    </pre>
+    //  `
+    //  <img src="${required.data[0].avatar}" alt="" srcset="">
+    let displaymenu = ''
+    for (let i = 0; i < data.length; i++) {
+
+        displaymenu +=
+            ` 
     <div class="col-md-3 ">
       <div class="card my-3 mx-3 p-3 bg-primary">
        
@@ -191,7 +191,7 @@ for(let i=0;i<data.length;i++){
               <h1 class="card-text">
                    ${data[i].email}
               </h1>
-               <button   class='btn edits bg-warning' type="button"><i class="fas fa-edit"></i></button>
+               <button   id='${data[i].id}' data-validtype='edit' class='btn edits bg-warning' type="button"><i class="fas fa-edit"></i></button>
               <a><button class='btn bg-warning'><i class="fas fa-trash-alt"></i></button></a>
           </div>
           
@@ -201,28 +201,36 @@ for(let i=0;i<data.length;i++){
      
        `;
 
-       cartSection.innerHTML = displaymenu; 
-       var up= document.querySelector('.edits')
-console.log(up.length)
+        cartSection.innerHTML = displaymenu;
+        var up = document.querySelector('.edits')
+        console.log(up.length)
 
-    
-}  
-up.addEventListener('click',upDate)  
+
+    }
+
 }
 
-function upDate(e){
-    
-    var sai= e.currentTarget;
-    console.log(sai)
-    let id=sai.parentElement.firstElementChild.innerText;
-    console.log(id)
+function upDate(e) {
+   var ids=document.querySelector('#ids').value;
+   var emailid=document.querySelector('#emailid').value
+    var sai = e.target;
 
-   
-    
-//    let id= document.querySelector('').parentElement.firstElementChild.innerText
-   
-   var edit=document.getElementById('edit');
-   edit.classList.remove('form--hidden')
+    if (sai.dataset.validtype == 'edit') {
+        let id = sai.parentElement.firstElementChild.innerText;
+        let email = sai.parentElement.children[1].innerText;
+       
+        var edit = document.getElementById('edit');
+        edit.classList.remove('form--hidden')
+    }
+    // let id=sai.parentElement.firstElementChild.innerText;
+    // console.log(id)
+
+
+
+    //    let id= document.querySelector('').parentElement.firstElementChild.innerText
+
+    //    var edit=document.getElementById('edit');
+    //    edit.classList.remove('form--hidden')
 
 }
 
@@ -231,13 +239,13 @@ function upDate(e){
 //      var sai= e.currentTarget;
 //      console.log(sai)
 
-    
-     
+
+
 // //    let id= document.querySelector('').parentElement.firstElementChild.innerText
-    
+
 //     var edit=document.getElementById('edit');
 //     edit.classList.remove('form--hidden')
 
 // //  }
- 
+
 
